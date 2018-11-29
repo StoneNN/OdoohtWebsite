@@ -1,0 +1,23 @@
+
+.header{
+   background-color:lightBlue;
+   padding: 0;
+}
+.header img{
+   height: 50px;
+   width: 250px;
+   margin-left: 4%;
+}
+.footer{
+   background-color:lightGray; 
+   color:rgb(114, 103, 101);
+   position:fixed;
+   bottom:0;
+   width:100%;
+   height:15%;
+   text-align: center;
+}
+
+.copyRight{
+  font-size: 12px
+}
