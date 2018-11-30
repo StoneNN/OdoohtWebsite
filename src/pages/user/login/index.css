@@ -1,0 +1,18 @@
+.loginBox{
+    background-image: url("../../../assets/loginBox.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width:100%;
+}
+.loginFrom{
+    width: 350px;
+}
+
+.normal {
+    width: 368px;
+    margin: 0 auto;
+    padding-top: 10%;
+    @media screen and (max-width: @screen-sm) {width: 95%;}
+}

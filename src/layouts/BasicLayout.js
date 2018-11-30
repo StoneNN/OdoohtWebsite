@@ -5,8 +5,10 @@ import { Layout, Row, Col } from 'antd';
 import GlobalNavi from '../component/GlobalNavi';
 import styles from './BasicLayout.css'
 import logoPic from '../assets/logo.jpg';
+import logIn from '../assets/logIn.png';
+import logOut from '../assets/logOut.png';
 import * as routes from '../common/navigationRoutes';
-
+import { Link } from 'dva/router';
 
 const {Header, Footer, Content} = Layout;
 const { naviRoutes } = routes;
@@ -23,19 +25,30 @@ class BasicLayout extends Component{
         return(
             <Layout>
                 <Header className={styles.header}>
-                  {/* <Row>
-                     <Col xl={8} xxl={8}> */}
-                       <img src={logoPic} />
-                     {/* </Col> 
-                     <Col xl={16} xxl={16}></Col>
-                  </Row> */}
+                  <Row>
+                     <Col xs={18} sm={12} xl={12} xxl={8}>
+                       <img className={styles.logo} src={logoPic} />
+                     </Col> 
+                     <Col xs={6} sm={12} xl={12} xxl={16} className={styles.userCol}>
+                       <Link to="user/login">
+                         <img className={styles.userPic} src={logOut}/> 
+                       </Link>
+                       
+                     </Col>
+                  </Row>
                 </Header>
                 <Content>
-                    <GlobalNavi
-                      naviRoutes={naviRoutes}
-                      pathName={headerRouter}
-                    />
-                    { this.props.children }
+                    <Row style={{backgroundColor:'white'}}>
+                        <Col span={1}></Col>
+                        <Col span={22}>
+                            <GlobalNavi
+                                naviRoutes={naviRoutes}
+                                pathName={headerRouter}
+                            />
+                            { this.props.children }
+                        </Col>
+                        <Col span={1}></Col>
+                    </Row>
                 </Content>
                 <Footer 
                 className={styles.footer}

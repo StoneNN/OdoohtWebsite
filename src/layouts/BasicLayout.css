@@ -3,10 +3,19 @@
    background-color:lightBlue;
    padding: 0;
 }
-.header img{
+.logo{
    height: 50px;
    width: 250px;
    margin-left: 4%;
+}
+.userCol{
+   position: relative;
+}
+.userPic{
+   position: absolute;
+   height:50px;
+   right: 20px;
+   top: 7px;
 }
 .footer{
    background-color:lightGray; 
