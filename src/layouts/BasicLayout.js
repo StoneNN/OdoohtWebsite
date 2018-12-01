@@ -5,10 +5,12 @@ import { Layout, Row, Col } from 'antd';
 import GlobalNavi from '../component/GlobalNavi';
 import styles from './BasicLayout.css'
 import logoPic from '../assets/logo.jpg';
-import logIn from '../assets/logIn.png';
-import logOut from '../assets/logOut.png';
+// import logIn from '../assets/logIn.png';
+// import logOut from '../assets/logOut.png';
 import * as routes from '../common/navigationRoutes';
 import { Link } from 'dva/router';
+import { dedent } from 'tslint/lib/utils';
+import {connect} from 'dva';
 
 const {Header, Footer, Content} = Layout;
 const { naviRoutes } = routes;
@@ -17,11 +19,21 @@ const { naviRoutes } = routes;
 
 class BasicLayout extends Component{
     
-
+    state = {
+        avatar:this.props.loginForm.avatar,
+        inOutState:false
+    }
+    
+    componentWillMount(props){
+        console.log('----------props-layout',this.props);
+    }
     render(){
-        
         const { history: { location: { pathname } } } = this.props;
         const headerRouter = '/' + pathname.split('/')[1];
+        const userAvatar = this.state.inOutState === 'true' ? <img className={styles.userPic} src={this.state.avatar}/> :
+        <Link to="user/login">
+          <img className={styles.userPic} src={this.state.avatar}/> 
+        </Link> 
         return(
             <Layout>
                 <Header className={styles.header}>
@@ -30,10 +42,7 @@ class BasicLayout extends Component{
                        <img className={styles.logo} src={logoPic} />
                      </Col> 
                      <Col xs={6} sm={12} xl={12} xxl={16} className={styles.userCol}>
-                       <Link to="user/login">
-                         <img className={styles.userPic} src={logOut}/> 
-                       </Link>
-                       
+                        {userAvatar} 
                      </Col>
                   </Row>
                 </Header>
@@ -64,4 +73,13 @@ class BasicLayout extends Component{
 }
 
 
-export default BasicLayout;
+// export default BasicLayout;
+
+const mapStateToProps =({login_m}) =>{
+
+    console.log('----- login_m ------',login_m)
+    return{loginForm:login_m}
+  }
+
+
+export default connect(mapStateToProps)(BasicLayout);

@@ -16,7 +16,7 @@ class UserBlock extends Component{
         notice: '',
         type: 'tab1',
         autoLogin: true,
-        visible:false
+        modalVisible:false
     }
     // 账号密码错误弹窗
     showModal(){
@@ -64,7 +64,7 @@ class UserBlock extends Component{
           type: key,
         });
     }
-      changeAutoLogin = (e) => {
+    changeAutoLogin = (e) => {
         this.setState({
           autoLogin: e.target.checked,
         });
@@ -134,7 +134,7 @@ class UserBlock extends Component{
                     <Modal
                         title="提示"
                         centered
-                        visible={this.props.loginForm.visible}
+                        modalVisible={this.props.loginForm.modalVisible}
                         onOk={this.handleOk.bind(this)}
                         onCancel={this.handleCancel.bind(this)}
                         okText="确定"
