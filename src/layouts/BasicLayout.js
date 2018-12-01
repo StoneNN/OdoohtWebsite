@@ -21,7 +21,7 @@ class BasicLayout extends Component{
     
     state = {
         avatar:this.props.loginForm.avatar,
-        inOutState:false
+        inOutState:this.props.loginForm.inOutState
     }
     
     componentWillMount(props){
@@ -30,7 +30,8 @@ class BasicLayout extends Component{
     render(){
         const { history: { location: { pathname } } } = this.props;
         const headerRouter = '/' + pathname.split('/')[1];
-        const userAvatar = this.state.inOutState === 'true' ? <img className={styles.userPic} src={this.state.avatar}/> :
+        console.log('--=-=-=-=-=-=-=-=-=-',this.state.inOutState === true);
+        const userAvatar = this.state.inOutState === true ? <img className={styles.userPic +' ' +styles.loginPic}  src={this.state.avatar}/> :
         <Link to="user/login">
           <img className={styles.userPic} src={this.state.avatar}/> 
         </Link> 
