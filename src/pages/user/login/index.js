@@ -16,7 +16,10 @@ class UserBlock extends Component{
         notice: '',
         type: 'tab1',
         autoLogin: true,
-        modalVisible:false
+        modalVisible:false,
+
+        lName:'',
+        pwd:''
     }
     // 账号密码错误弹窗
     showModal(){
@@ -49,6 +52,10 @@ class UserBlock extends Component{
                     console.log('--- value判断 ----',values,'???',err);
                     if (!err) {
                         console.log('Received values of form: ', values);
+                        this.setState({
+                            lName:values.username, 
+                            pwd:values.password
+                        });
                         this.props.dispatch({
                             type:'login_m/login',
                             payload:{name:values.username, pwd:values.password}
@@ -65,9 +72,17 @@ class UserBlock extends Component{
         });
     }
     changeAutoLogin = (e) => {
+        console.log('--------- autoLogin ---------',e);
         this.setState({
           autoLogin: e.target.checked,
         });
+        if (this.state.autoLogin === true) {
+            localStorage.setItem('lName',this.state.lName);
+            localStorage.setItem('pwd',this.state.pwd);
+        } else {
+            localStorage.removeItem('lName');
+            localStorage.removeItem('pwd');
+        }
     }
     render(){
         return(

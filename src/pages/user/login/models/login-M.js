@@ -31,10 +31,26 @@ export default{
               console.log('===== ShowModal =====');
               yield put({type:'showModal'});
             }
+        },
+        *logout({payload},{call,put}){
+          console.log('--------logout -----',payload);
+           yield put({
+             type:'logouts',
+             payload
+           })
         }
     },
 
     reducers:{
+        logouts(state,{payload}){
+          console.log('login-M----logout-payload------',payload);
+          const{inOutState} = payload;
+           return {
+             ...state,
+             avatar:logOut,
+             inOutState:inOutState
+            }
+        },
         save(state,{payload}){
           console.log('login-M----payload------',payload.userData[0].avatar);
            return {

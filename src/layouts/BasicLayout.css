@@ -10,12 +10,20 @@
 }
 .userCol{
    position: relative;
+   background-color: red;
+}
+.dropDown{
+   position: absolute;
+   height:60px;
+   right: 20px;
+   top: 5px;
 }
 .userPic{
    position: absolute;
    height:50px;
+   width: 50px;
    right: 20px;
-   top: 7px;
+   top: 5px;
 }
 .footer{
    background-color:lightGray; 
@@ -29,8 +37,4 @@
 
 .copyRight{
   font-size: 12px
-}
-
-.loginPic:hover{
-   height:300px;
 }
