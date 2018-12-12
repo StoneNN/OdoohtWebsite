@@ -23,13 +23,13 @@
    height:50px;
    width: 50px;
    right: 20px;
-   top: 5px;
+   top: 8px;
 }
 .footer{
    background-color:lightGray; 
    color:rgb(114, 103, 101);
-   position:fixed;
-   bottom:0;
+   /* position:fixed; */
+   /* bottom:0; */
    width:100%;
    height:15%;
    text-align: center;

@@ -42,7 +42,7 @@ class BasicLayout extends Component{
         const headerRouter = '/' + pathname.split('/')[1];
         console.log('--=-=-=-=-=-=-=-=-=-',this.state.inOutState === true);
         
-        alert(this.state.inOutState === true);
+        // alert(this.state.inOutState === true);
 
 // 用户图标
         const menu = (
@@ -86,15 +86,16 @@ class BasicLayout extends Component{
 {/* 内容 */}
                 <Content>
                     <Row style={{backgroundColor:'white'}}>
-                        <Col span={1}></Col>
-                        <Col span={22}>
+                        <Col span={1} xl={4}></Col>
+                        <Col span={22} xl={16}>
                             <GlobalNavi
                                 naviRoutes={naviRoutes}
                                 pathName={headerRouter}
+                                style={{backgroundColor:'white', marginBottom:'50%'}}
                             />
                             { this.props.children }
                         </Col>
-                        <Col span={1}></Col>
+                        <Col span={1} xl={4}></Col>
                     </Row>
                 </Content>
 {/* 页脚 */}

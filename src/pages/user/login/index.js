@@ -31,13 +31,13 @@ class UserBlock extends Component{
     handleOk(e){
         console.log('选择确认-----',e);
         this.props.dispatch({
-          type:'login_m/handleOk'
+            type:'login_m/handleOk'
         });
     }
     handleCancel(e){
         console.log('选择取消-----',e);
         this.props.dispatch({
-          type:'login_m/handleCancel'
+            type:'login_m/handleCancel'
         });
     }
     //登录操作
@@ -68,13 +68,13 @@ class UserBlock extends Component{
     onTabChange = (key) => {
         console.log('------tab',key);
         this.setState({
-          type: key,
+            type: key,
         });
     }
     changeAutoLogin = (e) => {
         console.log('--------- autoLogin ---------',e);
         this.setState({
-          autoLogin: e.target.checked,
+            autoLogin: e.target.checked,
         });
         if (this.state.autoLogin === true) {
             localStorage.setItem('lName',this.state.lName);
@@ -89,7 +89,7 @@ class UserBlock extends Component{
             <div className={styles.loginBox} >
               <div className={styles.normal}>
                 <div style={{textAlign:'center'}}>
-                   <img src={logoPic} style={{ width:'350px',height:'150px',margin:'0 auto',display:'inline-block'}}/>
+                    <img src={logoPic} style={{ width:'350px',height:'150px',margin:'0 auto',display:'inline-block'}}/>
                 </div>
                 <Login
                     defaultActiveKey={this.state.type}
