@@ -1,22 +1,23 @@
 
-
 @media screen and (min-width:100px){
     .toppicCarousel{
         margin-top: 5%;
         width:100%;
         height:auto;
+        max-height: 350px;
     }
     .toppic{
         width: 100%;
         height: auto;
+        max-height: 350px;
     }
 /************/
     .majorTitle, .caseTitle, .companyInfoTitle{
         font-size: 15px;
-        color: lightseagreen;
+        color: rgb(24, 144,255);
         font-weight: bolder;
         padding-top: 5%;
-        border-bottom: lightseagreen solid 1px;
+        border-bottom: rgb(24, 144,255)solid 1px;
     }
     .majorList{
         /* background-color: lightblue; */
@@ -45,11 +46,14 @@
         color: black;
         font-size: 13px;
         padding-top: 5%;
+        font-weight: bolder;
     }
     .majorDescribe{
         font-size: 11px;
         color: grey;
         padding-top: 2%;
+        text-indent: 2em;
+        text-align: left;
     }
 /************/
     .caseList{
@@ -67,12 +71,13 @@
         width: 96%;
         background-color: lightgray;
         margin: 2%;
+        border-radius: 1%;
+        padding: 5px;
     }
     .companyInfoPic{
         width: 150px;
         height: 150px;
         float: left;
-        margin:2%;
     }
 }
 @media screen and (min-width: 768px){
@@ -86,14 +91,15 @@
     .toppic{
         width: 100%;
         height: auto;
+        max-height: 350px;
     }
 /************/
     .majorTitle, .caseTitle, .companyInfoTitle{
         font-size: 25px;
-        color: lightseagreen;
+        color: rgb(24, 144,255);
         font-weight: bolder;
         padding-top: 5%;
-        border-bottom: lightseagreen solid 2px;
+        border-bottom: rgb(24, 144,255) solid 2px;
     }
     .majorList{
         /* background-color: blue; */
@@ -121,11 +127,14 @@
         color: black;
         font-size: 13px;
         padding-top: 5%;
+        font-weight: bolder;
     }
     .majorDescribe{
         font-size: 11px;
         color: grey;
         padding-top: 2%;
+        text-indent: 2em;
+        text-align: left;
     }
 /************/
     .caseList{
@@ -154,10 +163,10 @@
     }
     .majorTitle, .caseTitle, .companyInfoTitle{
         font-size: 30px;
-        color: lightseagreen;
+        color: rgb(24, 144,255);
         font-weight: bolder;
         padding-top: 5%;
-        border-bottom: lightseagreen solid 2px;
+        border-bottom: rgb(24, 144,255) solid 2px;
     }
     .majorList{
         /* background-color: greenyellow; */
@@ -185,11 +194,14 @@
         color: black;
         font-size: 13px;
         padding-top: 5%;
+        font-weight: bolder;
     }
     .majorDescribe{
         font-size: 11px;
         color: grey;
         padding-top: 2%;
+        text-indent: 2em;
+        text-align: left;
     }
 }
 

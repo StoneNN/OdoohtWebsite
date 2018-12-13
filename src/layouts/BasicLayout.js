@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Layout, Row, Col, Menu, Dropdown, Button } from 'antd';
 import GlobalNavi from '../component/GlobalNavi';
 import styles from './BasicLayout.css'
-import logoPic from '../assets/logo.jpg';
+import logoPic from '../assets/logo.png';
 import logIn from '../assets/logIn.png';
 import logOut from '../assets/logOut.png';
 import * as routes from '../common/navigationRoutes';
@@ -68,20 +68,20 @@ class BasicLayout extends Component{
         </Dropdown>
         :
         <Link to="user/login">
-          <img className={styles.userPic} src={logOut}/> 
+            <img className={styles.userPic} src={logOut}/> 
         </Link> 
         return(
             <Layout>
 {/* 页头 */}
                 <Header className={styles.header}>
-                  <Row>
-                     <Col xs={18} sm={12} xl={12} xxl={8}>
-                       <img className={styles.logo} src={logoPic} />
-                     </Col> 
-                     <Col xs={6} sm={12} xl={12} xxl={16} className={styles.userCol}>
-                        {userAvatar} 
-                     </Col>
-                  </Row>
+                    <Row>
+                        <Col xs={18} sm={12} xl={12} xxl={8}>
+                            <img className={styles.logo} src={logoPic} />
+                        </Col> 
+                        <Col xs={6} sm={12} xl={12} xxl={16} className={styles.userCol}>
+                            {userAvatar} 
+                        </Col>
+                    </Row>
                 </Header>
 {/* 内容 */}
                 <Content>
@@ -93,6 +93,7 @@ class BasicLayout extends Component{
                                 pathName={headerRouter}
                                 style={{backgroundColor:'white', marginBottom:'50%'}}
                             />
+                            
                             { this.props.children }
                         </Col>
                         <Col span={1} xl={4}></Col>
@@ -101,12 +102,12 @@ class BasicLayout extends Component{
 {/* 页脚 */}
                 <Footer 
                 className={styles.footer}
-                  style={{ 
+                    style={{ 
                         }}
                 >
-                   <div className={styles.copyRight}>版权所有 © 2018 北京欧德慧通信息技术有限公司</div>
-                   <div className={styles.copyRight}>京ICP备16000236号-1</div>
-                   
+                    <div className={styles.copyRight}>版权所有 © 2018 北京欧德慧通信息技术有限公司</div>
+                    <div className={styles.copyRight}>京ICP备16000236号-1</div>
+            
                 </Footer>
             </Layout>
         );

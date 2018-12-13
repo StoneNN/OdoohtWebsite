@@ -3,14 +3,25 @@
    background-color:lightBlue;
    padding: 0;
 }
-.logo{
-   height: 50px;
-   width: 250px;
-   margin-left: 4%;
+
+@media screen and (min-width: 100px){
+   .logo{
+      height: 30px;
+      width: 200px;
+      margin-left: 2%;
+   }
 }
+@media screen and (min-width: 512px){
+   .logo{
+      height: 50px;
+      width: 350px;
+      margin-left: 2%;
+   }
+}
+
 .userCol{
    position: relative;
-   background-color: red;
+   /* background-color: red; */
 }
 .dropDown{
    position: absolute;

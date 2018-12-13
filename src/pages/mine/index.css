@@ -1,0 +1,68 @@
+.culturePic{
+    width: 98%;
+    height: auto;
+    margin: 1%;
+}
+.usTitle{
+    text-align: center;
+}
+
+@media screen and (min-width:100px){ 
+    .usEng{
+        color: rgb(24, 144,255);
+        font-size: 14px;
+        font-weight: bolder;
+        display: inline-block;
+        padding-top: 3%;
+    }
+    .usCn{
+        font-size: 14px;
+        display: inline-block;
+        margin: 2%;
+    }
+    .usLine{
+        color: lightgray;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .usEng{
+        color: rgb(24, 144,255);
+        font-size: 30px;
+        font-weight: bolder;
+        display: inline-block;
+        padding-top: 3%;
+    }
+    .usCn{
+        display: inline-block;
+        font-size: 22px;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 0;
+    }
+    .usLine{
+        /* color: lightgray; */
+        color: rebeccapurple;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .usEng{
+        color: rgb(24, 144,255);
+        font-size: 34px;
+        font-weight: bolder;
+        display: inline-block;
+        padding-top: 3%;
+    }
+    .usCn{
+        display: inline-block;
+        font-size: 26px;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 0;
+    }
+    .usLine{
+        /* color: lightgray; */
+        color: red;
+    }
+}
