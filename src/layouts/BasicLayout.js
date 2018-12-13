@@ -104,8 +104,9 @@ class BasicLayout extends Component{
                   style={{ 
                         }}
                 >
-                   <div className={styles.copyRight}>智赛棋牌版权所有</div>
-                   <div className={styles.copyRight}>北京欧德慧通信息技术有限公司提供技术支持</div>
+                   <div className={styles.copyRight}>版权所有 © 2018 北京欧德慧通信息技术有限公司</div>
+                   <div className={styles.copyRight}>京ICP备16000236号-1</div>
+                   
                 </Footer>
             </Layout>
         );

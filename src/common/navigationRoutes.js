@@ -5,13 +5,13 @@ export const naviRoutes = [
         children:[]
     },
     {
-        name:"新闻",
+        name:"新闻中心",
         path:'/news',
         children:[]
     },
     {
-        name:"赛事",
-        path:'/games',
+        name:"产品案例",
+        path:'/cases',
         children:[]
     },
     {
