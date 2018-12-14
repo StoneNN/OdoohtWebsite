@@ -41,7 +41,7 @@ class BasicLayout extends Component{
         const { history: { location: { pathname } } } = this.props;
         const headerRouter = '/' + pathname.split('/')[1];
         console.log('--=-=-=-=-=-=-=-=-=-',this.state.inOutState === true);
-        
+        console.log('----- naviRoutes -----',naviRoutes,headerRouter);
         // alert(this.state.inOutState === true);
 
 // 用户图标
@@ -70,7 +70,9 @@ class BasicLayout extends Component{
         <Link to="user/login">
             <img className={styles.userPic} src={logOut}/> 
         </Link> 
+        
         return(
+            
             <Layout>
 {/* 页头 */}
                 <Header className={styles.header}>

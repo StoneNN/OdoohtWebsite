@@ -19,7 +19,8 @@ const GlobalNavi = props => {
             <Menu
                 theme='grey'
                 mode="horizontal"
-                defaultSelectedKeys={[pathName]}
+                selectedKeys={[pathName]}
+                defaultSelectedKeys={['/home']}
                 style={{ lineHeight: '64px' }}
             >
                 {HeaderMenu}
