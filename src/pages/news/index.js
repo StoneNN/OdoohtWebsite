@@ -51,7 +51,7 @@ class NewsBlock extends Component{
                     </div>
                     </a>
                     <Link to={{pathname:'/cases'}}>
-						<div> 更多案例 >></div>
+						<div style={{ fontSize:'10px',textAlign:'right' }}> 更多案例 >></div>
 					</Link>
                 </div>
                 <div className={styles.tellUsTitle} >联系我们</div>

@@ -1,7 +1,7 @@
 //基本布局
 
 import React, { Component } from 'react';
-import { Layout, Row, Col, Menu, Dropdown, Button } from 'antd';
+import { Layout, Row, Col, Menu, Dropdown, Button, Drawer, Icon } from 'antd';
 import GlobalNavi from '../component/GlobalNavi';
 import styles from './BasicLayout.css'
 import logoPic from '../assets/logo.png';
@@ -12,9 +12,48 @@ import { Link } from 'dva/router';
 import { dedent } from 'tslint/lib/utils';
 import {connect} from 'dva';
 
+import Message from './Message';
+
+
 const {Header, Footer, Content} = Layout;
 const { naviRoutes } = routes;
+var timer;
 
+class SubmitInfo extends React.Component {
+    state = { visible: false };
+    showDrawer = () => {
+        this.setState({
+            visible: true,
+        });
+    };
+
+    onClose = () => {
+        this.setState({
+            visible: false,
+        });
+    };
+
+    render() {
+        return (
+            <div>
+                <Button type="primary" onClick={this.showDrawer}>
+                <Icon type='message'/> 在线留言
+                </Button>
+                
+                <Drawer width={'350px'}
+                    title="在线留言"
+                    placement="right"
+                    closable={true}
+                    onClose={this.onClose}
+                    visible={this.state.visible}
+                > 
+                
+                    <Message/>
+                </Drawer>
+            </div>
+        );
+    }
+}
 
 class BasicLayout extends Component{
     
@@ -22,9 +61,13 @@ class BasicLayout extends Component{
         super(props);
         this.state = {
             avatar:this.props.loginForm.avatar,
-            inOutState:this.props.loginForm.inOutState
+            inOutState:this.props.loginForm.inOutState,
+            numTool: 60,
+            numMess:0,
+            hide:'false',
         };
         this.handleLogout = this.handleLogout.bind(this);
+        this.display_name=this.display_name.bind(this);
     }
     handleLogout(){
         this.props.dispatch({
@@ -35,6 +78,29 @@ class BasicLayout extends Component{
     componentWillMount(props){
         console.log('----------props-layout',this.props);
     }
+    display_name() { 
+    
+        if (this.state.hide === 'false' ) {
+            clearInterval(timer);
+            timer = setInterval(()=>this.setState({
+            numTool:this.state.numTool>0 ? this.state.numTool-10:this.state.numTool,
+            numMess:this.state.numMess>-100 ? this.state.numMess-10:this.state.numMess, 
+            }),50);
+          
+            this.state.hide='true';
+          
+        }
+        else if (this.state.hide === 'true') {
+          clearInterval(timer);
+          timer = setInterval(()=>this.setState({
+            numTool:this.state.numTool<70 ? this.state.numTool+10:this.state.numTool,
+            numMess:this.state.numMess<0 ? this.state.numMess+10:this.state.numMess,
+            
+          }),50);
+            console.log(1)
+            this.state.hide='false';
+        }
+      }
     render(){
         console.log(this.state.inOutState);
         
@@ -97,6 +163,9 @@ class BasicLayout extends Component{
                             />
                             
                             { this.props.children }
+                        {/* 在线留言 */}
+                            <div className={styles.service} style={{right:this.state.numTool+'px'}} onClick={this.display_name}><span>收起留言框</span></div>
+                            <div className={styles.online} style={{right:this.state.numMess+'px'}}><SubmitInfo /></div>  
                         </Col>
                         <Col span={1} xl={4}></Col>
                     </Row>
