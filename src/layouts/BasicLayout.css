@@ -21,13 +21,11 @@
 
 .userCol{
    position: relative;
-   /* background-color: red; */
 }
 .dropDown{
    position: absolute;
    height:60px;
-   right: 20px;
-   top: 5px;
+   right: 1px; 
 }
 .userPic{
    position: absolute;
@@ -35,6 +33,7 @@
    width: 50px;
    right: 20px;
    top: 8px;
+   border-radius: 50%
 }
 .footer{
    background-color:lightGray; 
@@ -52,7 +51,7 @@
 
 .service{
    font-size: 16px;
-   height:120px;
+   height:80px;
    width:31px;
    background:rgb(234, 233, 238);
    position:fixed;
@@ -62,7 +61,7 @@
    /* background: url(../assets/logo.png) ; */
    font-weight: bold;
    text-align: center;
-  
+   transition: right 0.5s ease ;
    border-radius: 5px;
    /* -webkit-transform:skew(-5deg); */
 }
@@ -77,5 +76,8 @@
    width:100px;
    bottom:10px;
    right:10px;
-  
+   transition: right 0.5s ease 
+}
+.tranMessage{
+   transition: right 0.5s ease 
 }
