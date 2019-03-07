@@ -4,6 +4,8 @@ import { Menu, Drawer, Icon, Layout } from 'antd';
 import { Link } from 'dva/router';
 import styles from './index.less';
 import { List, Home, News, Product, Us } from '../svg';
+
+
 class GlobalNavi extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -26,6 +28,7 @@ class GlobalNavi extends React.PureComponent {
                 </Menu.Item>
             );
         }).filter((item) => (item));
+        
         const icon = (item) => {
             switch (item.path) {
                 case "/home":

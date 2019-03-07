@@ -3,13 +3,13 @@ import {routerRedux} from 'dva/router';
 import logOut from '@/assets/logOut.png';
 
 
-export default{
+export default {
     
     namespace:"login_m",
     state:{
-       modalVisible:false,
-       avatar:logOut,
-       inOutState:false
+      modalVisible:false,
+      avatar:logOut,
+      inOutState:false
     },
 
     effects:{
@@ -24,7 +24,7 @@ export default{
               }),
               yield put(
                 routerRedux.push({
-                   pathname:'../home'
+                  pathname:'../home'
                 })
               )
             } else {
@@ -34,10 +34,10 @@ export default{
         },
         *logout({payload},{call,put}){
           console.log('--------logout -----',payload);
-           yield put({
-             type:'logouts',
-             payload
-           })
+            yield put({
+              type:'logouts',
+              payload
+            })
         }
     },
 
@@ -45,18 +45,18 @@ export default{
         logouts(state,{payload}){
           console.log('login-M----logout-payload------',payload);
           const{inOutState} = payload;
-           return {
-             ...state,
-             avatar:logOut,
-             inOutState:inOutState
+            return {
+              ...state,
+              avatar:logOut,
+              inOutState:inOutState
             }
         },
         save(state,{payload}){
           console.log('login-M----payload------',payload.userData[0].avatar);
-           return {
-             ...state,
-             avatar:payload.userData[0].avatar,
-             inOutState:true
+            return {
+              ...state,
+              avatar:payload.userData[0].avatar,
+              inOutState:true
             }
         },
         showModal(state) {

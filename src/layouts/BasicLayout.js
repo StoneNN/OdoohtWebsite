@@ -59,7 +59,7 @@ class SubmitInfo extends React.Component {
 class BasicLayout extends Component {
 
     constructor(props) {
-        super(props);
+        super(props);console.log(props);
         this.state = {
             avatar: this.props.loginForm.avatar,
             inOutState: this.props.loginForm.inOutState,
@@ -179,6 +179,7 @@ class BasicLayout extends Component {
 // export default BasicLayout;
 
 const mapStateToProps = ({ login_m }) => {
+    console.log(login_m);
     return { loginForm: login_m }
 }
 

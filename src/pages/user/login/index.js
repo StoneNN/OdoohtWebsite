@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Alert, Checkbox, Modal, Icon } from 'antd';
+import { Alert, Checkbox, Modal } from 'antd';
+import { Link } from 'dva/router';
 import styles from './index.css';
 import 'antd/dist/antd.css';
 import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
@@ -89,13 +90,12 @@ class UserBlock extends Component{
             <div className={styles.loginBox} >
               <div className={styles.normal}>
                 <div style={{textAlign:'center'}}>
-                    <img src={logoPic} style={{ width:'350px',height:'150px',margin:'0 auto',display:'inline-block'}}/>
+                    <img src={logoPic} className={styles.logoPic}/>
                 </div>
                 <Login
                     defaultActiveKey={this.state.type}
                     onTabChange={this.onTabChange}
                     onSubmit={this.onSubmit}
-                    // className={styles.loginFrom}
                 >
                     <Tab key="tab1" tab="账号登录">
                         {
@@ -143,6 +143,7 @@ class UserBlock extends Component{
                         <a style={{ float: 'right' }} href="">忘记密码</a>
                     </div>
                     <Submit>登录</Submit>
+                    <Link className={styles.registerBtn} to="user/login">去注册 >></Link>
                 </Login>
              {/* 错误弹窗 */}
                 <div>
