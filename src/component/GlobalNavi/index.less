@@ -1,9 +1,19 @@
-
+.icon{
+    margin-top: 8px;
+    width:100%;
+    border-bottom: rgb(24, 144,255)solid 1px;
+}
 @media screen and (min-width:100px){
     .linkItem{
         font-size: 13px;
         font-weight: bold;
         color: lightgrey;
+    }
+    .header{
+        display: none
+    }
+    .icon{
+        height: 2rem;
     }
 }
 
@@ -13,6 +23,12 @@
         font-weight: bold;
         color: lightgrey;
     }
+    .header{
+        display: block
+    }
+    .icon{
+        display: none
+    }
 }
 
 @media screen and (min-width: 992px){
@@ -21,6 +37,12 @@
         font-weight: bold;
         color: lightgrey;
     }
+    .header{
+        display: block
+    }
+    .icon{
+        display: none
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -28,5 +50,11 @@
         font-size: 23px;
         font-weight: bold;
         color: lightgrey;
+    }
+    .header{
+        display: block
+    }
+    .icon{
+        display: none
     }
 }
